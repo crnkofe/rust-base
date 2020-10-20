@@ -11,9 +11,9 @@ RUN rustup component add rustfmt-preview
 
 RUN cargo install cargo-release
 
-RUN apt-get update && apt-get install -y \
-    cmake \
-&& rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+	&& apt-get install -y libxcb-shape0-dev libxcb-xfixes0-dev cmake \
+	&& rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
