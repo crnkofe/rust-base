@@ -12,7 +12,7 @@ RUN rustup component add rustfmt-preview
 RUN cargo install cargo-release
 
 RUN apt-get update \
-	&& apt-get install -y libxcb-shape0-dev libxcb-xfixes0-dev cmake \
+	&& apt-get install -y libxcb-shape0-dev libxcb-xfixes0-dev xorg-dev cmake \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY build_termbox.sh /build_termbox.sh
