@@ -15,5 +15,8 @@ RUN apt-get update \
 	&& apt-get install -y libxcb-shape0-dev libxcb-xfixes0-dev cmake \
 	&& rm -rf /var/lib/apt/lists/*
 
+COPY build_termbox.sh /build_termbox.sh
+RUN /build_termbox.sh
+
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
